@@ -1,0 +1,5 @@
+[MESSAGES CONTROL]
+# W0105 pointless-string-statement, W0718 broad-exception-caught, C0303 trailing-whitespace
+# C0114 missing-module-docstring, W1203 logging-fstring-interpolation
+# C0206 Consider iterating with .items()
+disable=W0105,W0718,C0303,C0114,W1203,W0120,C0206
