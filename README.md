@@ -8,8 +8,13 @@ I am also using this as an exercise in directing Claude Code efficiently and eff
 
 I will be attempting to modularize functions and add testing where possible, and I will most likely eventually introduce some kind of caching for certain problems (redis or memcached)
 
+
+## ENVIRONMENT variables
+EULER_ENV - set this to anything that isn't "local" to get automagic JSON-formatted logs 
+
+## Project equirements
 Python 3.12
-redis (optional)
+redis instance in docker (optional)
 
 ## Running Redis with Docker Compose
 
