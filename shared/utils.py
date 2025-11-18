@@ -4,6 +4,45 @@ from shared.log_helpers import LogHelper
 logger = LogHelper.get_logger(__name__)
 
 
+def factor_prime(factor_num: int):
+    """
+    Return a list of prime factors for the input number.
+
+    :param factor_num: The number to factorize
+    :return: List of prime factors in ascending order
+
+    Examples:
+        factor(10) -> [2, 5]
+        factor(20) -> [2, 2, 5]
+    """
+    if factor_num <= 2:
+        return [factor_num]
+
+    factors = []
+    factor_working = factor_num
+    divisor = 2
+
+    # Check for factor of 2
+    while factor_working % 2 == 0:
+        factors.append(2)
+        factor_working //= 2
+
+    # Check for odd factors from 3 onwards
+    divisor = 3
+    while divisor * divisor <= factor_working:
+        while factor_working % divisor == 0:
+            factors.append(divisor)
+            factor_working //= divisor
+        divisor += 2
+
+    # If factor_num is still greater than 1, it's a prime factor
+    if factor_working > 1:
+        factors.append(factor_working)
+
+    return factors
+
+
+
 def get_multiple_sequence(**kwargs):
     """
     For a start and end index, get a list of all multiples
